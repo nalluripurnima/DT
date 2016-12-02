@@ -37,7 +37,9 @@ public class ProductDAOImpl implements ProductDAO{
 		Transaction t = s.beginTransaction();
 		Criteria c=sf.getCurrentSession().createCriteria(Product.class);
 		c.add(Restrictions.eq("category", cg));
+		System.out.println(cg);
 		List<Product> l1 = (List<Product>) c.list();
+		System.out.println("product list");
 		t.commit();
 		return l1;
 	}

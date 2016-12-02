@@ -14,9 +14,9 @@ public class UserOrder {
 	@Id
 	private Integer orderId;
 	
-	@OneToMany
+	/*@OneToMany
     @JoinColumn(name = "cartId")
-    private List<Cart> Cart;
+    private List<Cart> Cart;*/
 
 	
 	@OneToOne
@@ -39,13 +39,13 @@ public class UserOrder {
 		this.orderId = orderId;
 	}
 
-	public List<Cart> getCart() {
+	/*public List<Cart> getCart() {
 		return Cart;
 	}
 
 	public void setCart(List<Cart> cart) {
 		Cart = cart;
-	}
+	}*/
 
 	public User getUser() {
 		return user;

@@ -23,8 +23,10 @@ public class CartDAOImpl implements CartDAO{
 	public List<Cart> viewAllCart() {
 		Session s = sf.getCurrentSession();
 		Transaction t = s.beginTransaction();
+		System.out.println("hjghygf");
 		@SuppressWarnings("unchecked")
 		List<Cart> l1 = (List<Cart>) sf.getCurrentSession().createCriteria(Cart.class).list();
+		System.out.println("sjbdcsdhcb ");
 		t.commit();
 		return l1;
 	}
@@ -38,14 +40,16 @@ public class CartDAOImpl implements CartDAO{
         s.delete(c1);
 		t.commit();
 	}
-
+	@Transactional(propagation = Propagation.SUPPORTS)
 	public void addCart(Cart cart) {
 		Session s = sf.getCurrentSession();
 		Transaction t = s.beginTransaction();
+		System.out.println("hbjebe");
 		s.save(cart);
+		System.out.println("uyvcewhxqu");
 		t.commit();
 	}
-	
+	@Transactional(propagation = Propagation.SUPPORTS)
 	public List<Cart> getCartById(int cartId) 
 	{
 		Session s = sf.getCurrentSession();

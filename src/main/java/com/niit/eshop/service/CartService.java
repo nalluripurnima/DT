@@ -18,6 +18,7 @@ public class CartService implements ICartService{
 	
 	public void addToCart(Cart cart)
 	{
+		System.out.println("cart not added");
 		cd.addCart(cart);
 	}
 

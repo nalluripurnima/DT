@@ -48,7 +48,9 @@ public class CartController {
 		c.setQuantity(1);
 		System.out.print("adding to cart "+iUserService.getUser());
 		c.setUser(iUserService.getUser());
+		System.out.println("user added to .....");
 		iCartService.addToCart(c);
+		System.out.println(".....cartng"+c);
 		return new ModelAndView("cart", "cartItem",c).addObject("cart",iCartService.viewAllCart());
 	}
 	

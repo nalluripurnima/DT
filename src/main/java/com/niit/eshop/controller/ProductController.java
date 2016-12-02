@@ -99,8 +99,10 @@ public class ProductController
 	        {
 	           error=p.getPname()+" Profile Upload Successfully !";
 	        }
+	        System.out.println("product added");
 		//iProductService.addProduct(p);
 		}
+		System.out.println("prod will add");
 		return new ModelAndView("addproduct", "command", new Product()).addObject("products", iProductService.viewAllProducts()).addObject("Category",iCategoryService.viewAllCategory()).addObject("Supplier",iSupplierService.viewAllSuppliers()).addObject("stat", "Add Product");
 	}
 	
@@ -152,7 +154,7 @@ public class ProductController
 		ObjectMapper mapper=new ObjectMapper();
 		try 
 		{
-			jsonData=mapper.writeValueAsString(iProductService.viewAllProducts());
+			jsonData=mapper.writeValueAsString(iProductService.viewAllProducts(iCategoryService.viewCategory(cid)));
 			System.out.println(jsonData);
 		}
 		catch (JsonGenerationException e)

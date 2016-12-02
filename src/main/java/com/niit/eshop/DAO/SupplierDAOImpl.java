@@ -49,7 +49,8 @@ public class SupplierDAOImpl implements SupplierDAO
 		s.delete(s1);
 		t.commit();
 	}
-
+   
+   @Transactional(propagation=Propagation.SUPPORTS)
 	public void updateSupplier(Supplier s1) {
 		Session s=sf.openSession();
 		Transaction t=s.beginTransaction();
@@ -57,7 +58,8 @@ public class SupplierDAOImpl implements SupplierDAO
 		s.update(s1);
 		t.commit();
 	}
-
+   
+   @Transactional(propagation=Propagation.SUPPORTS)
 	public Supplier editSupplier(int sid) {
 		Session s=sf.getCurrentSession();
 		Transaction t=s.beginTransaction();
