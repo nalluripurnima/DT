@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: eshop
+Bundle-SymbolicName: eshop
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.niit.eshop.Config,
+ com.niit.eshop.DAO,
+ com.niit.eshop.controller,
+ com.niit.eshop.model,
+ com.niit.eshop.service,
+ com.niit.eshop.util
